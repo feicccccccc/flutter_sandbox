@@ -6,18 +6,24 @@ import "dart:math";
 
 // Flutter start run from here
 void main() {
-  runApp(const MyApp()); // global function runApp() to start the application
+  runApp(MyApp()); // global function runApp() to start the application
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApp extends StatefulWidget {
+  MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int count = 0;
 
   randomColors() {
     return Color((Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0);
   }
 
   // Get called when flutter need to rebuild the UI
-  // context let widget know where it is in the widget tree.
   @override
   Widget build(BuildContext context) {
     // Return a template using MaterialApp
@@ -27,10 +33,11 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: ListView.builder(itemBuilder: ((context, index) {
           // return Center(child: Text("I am $index"));
+          count++;
           return Center(
             child: Container(
               color: randomColors(),
-              width: double.infinity,
+              width: count.toDouble() * 5,
               height: 500,
               child: Center(child: Text("I am index $index")),
             ),
