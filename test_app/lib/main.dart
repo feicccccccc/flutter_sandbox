@@ -10,14 +10,14 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
-  MyApp({super.key});
+  MyApp({super.key}); // init the class with superclass by sending the keys
 
   @override
   State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-  int count = 0;
+  int idx = 0;
 
   randomColors() {
     return Color((Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0);
@@ -33,11 +33,11 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         body: ListView.builder(itemBuilder: ((context, index) {
           // return Center(child: Text("I am $index"));
-          count++;
+          idx = index;
           return Center(
             child: Container(
               color: randomColors(),
-              width: count.toDouble() * 5,
+              width: idx.toDouble() * 5,
               height: 500,
               child: Center(child: Text("I am index $index")),
             ),
