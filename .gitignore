@@ -19,3 +19,11 @@ doc/api/
 *.js_
 *.js.deps
 *.js.map
+
+test_app/lib/firebase_options.dart
+test_app/linux
+test_app/macos
+test_app/ios
+test_app/android
+test_app/windows
+test_app/web
