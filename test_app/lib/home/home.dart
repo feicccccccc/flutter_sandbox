@@ -15,7 +15,10 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: Center(
         child: ElevatedButton(
-          child: Text('about'),
+          child: Text(
+            'about',
+            style: Theme.of(context).textTheme.button,
+          ),
           onPressed: () => Navigator.pushNamed(context, '/about'),
         ),
       ),

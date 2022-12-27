@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:test_app/routes.dart';
+import 'package:test_app/theme.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -24,10 +25,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      routes: appRoutes,
+      theme: appTheme, // theme.dart
+      routes: appRoutes, // routes.dart
     );
   }
 }
