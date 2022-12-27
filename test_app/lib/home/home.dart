@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
             'about',
             style: Theme.of(context).textTheme.button,
           ),
-          onPressed: () => Navigator.pushNamed(context, '/about'),
+          onPressed: () => Navigator.pushNamed(context, '/topics'),
         ),
       ),
     );

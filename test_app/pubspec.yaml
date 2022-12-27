@@ -39,6 +39,8 @@ dependencies:
 
   # Use firebase for backend
   firebase_core: ^2.4.0
+  google_fonts: ^3.0.1
+  font_awesome_flutter: ^10.3.0
   # cloud_firestore: 3.1.18
   # firebase_auth: 3.3.20
 
