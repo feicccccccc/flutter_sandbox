@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:test_app/services/firestore.dart';
 import 'package:test_app/shared/bottom_nav.dart';
 
 class TopicsScreen extends StatefulWidget {
@@ -15,6 +16,20 @@ class _TopicsScreenState extends State<TopicsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavBar(),
+      body: ElevatedButton(
+        child: Container(),
+        onPressed: () {
+          print("hello");
+          print(FirestoreService().getTopics().then(
+            (value) {
+              print(value);
+              for (var v in value) {
+                print(v.title);
+              }
+            },
+          ));
+        },
+      ),
     );
   }
 }
